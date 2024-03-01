@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <title>魔道杯データ　全体デイリー1Pデータ</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="https://i-cf.quiz.colopl.jp/img/card/small/card_05302_0.png">
+    <!-- CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- CSS -->
+</head>
+<body class="noselectable pb-5">
+
+    <div id="loader-bg">
+        <img src="../img/materials/Loading.gif">
+    </div>
+
+    <div class="container-fluid p-0 overflow-hidden">
+        <div class="row g-0">
+
+            <div class="col-12" id="header">
+            </div>
+            <nav class="topbar border-wiz border-top border-bottom border-top p-2 mb-2" aria-label="Breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                <ol class="breadcrumb mb-1">
+                    <li class="breadcrumb-item"><a href="../index.html">ホーム</a></li>
+                    <li class="breadcrumb-item active Event_this_page" aria-current="page">全体デイリー1Pデータ</li>
+                    <li class="ps-2"><span class="d-inline-block pe-2" style="color: #6c757d;">/</span><a href="overall-data.html">総合ボードデータ</a></li>
+                </ol>
+            </nav>
+
+            <div class="col-12 p-2 data-search-setting">
+
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item bg-film border-wiz">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed bg-wiz bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                検索
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <div class="row g-0">
+                                    <div class="col-12 col-md-6 p-2">
+
+                                        <div class="" style="margin-bottom:16.5px;">
+                                            <label for="user_search" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">ユーザー名</label>
+                                            <input type="text" class="form-control" id="user_search" placeholder="ユーザー名を入力" data-bs-toggle="dropdown">
+                                            <ul class="dropdown-menu" id="dropdown-user" aria-labelledby="dropdownUser">
+                                                <li value="[OR]"><a class="dropdown-item">[OR]</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="" style="margin-bottom:10.5px;">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="point_search">ポイント</label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="point_search" placeholder="ポイントを入力" min="0">
+                                                <select class="form-select" id="point_search_condition">
+                                                    <option value="1">以上</option>
+                                                    <option value="2" selected>一致</option>
+                                                    <option value="3">以下</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="rank_search">順位</label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="rank_search" placeholder="順位を入力" min="1" max="50">
+                                                <select class="form-select" id="rank_search_condition">
+                                                    <option value="1">以上</option>
+                                                    <option value="2" selected>一致</option>
+                                                    <option value="3">以下</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="day_search">日程</label>
+                                            <div class="d-flex justify-content-between flex-wrap row row-cols-4 g-0" id="day-search">
+                                                <input type="checkbox" value="1" name="day_search" class="btn-check" id="btn-check_page1" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_page1">1日目</label>
+                                                <input type="checkbox" value="2" name="day_search" class="btn-check" id="btn-check_page2" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_page2">2日目</label>
+                                                <input type="checkbox" value="3" name="day_search" class="btn-check" id="btn-check_page3" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_page3">3日目</label>
+                                                <input type="checkbox" value="4" name="day_search" class="btn-check" id="btn-check_page4" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_page4">4日目</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-6 p-2">
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="first_search">ポイント調整</label>
+                                            <div class="d-flex justify-content-between flex-wrap row row-cols-2 g-0" id="first-search">
+                                                <input type="checkbox" value="1" name="first_search" class="btn-check" id="btn-check_ft1" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_ft1">初1P</label>
+                                                <input type="checkbox" value="2" name="first_search" class="btn-check" id="btn-check_ft2" autocomplete="off"><label class="btn btn-outline-primary px-1" for="btn-check_ft2">初1位</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="year_search">開催年</label>
+                                            <div class="d-flex justify-content-between flex-wrap row row-cols-4 g-0" id="year-button">
+                                                <script>
+                                                    var year_button = document.getElementById('year-button');
+                                                    let year_button_genelate = '';
+                                                    for (let i = 2013; i < 2025; i++) {
+                                                        year_button_genelate += `<input type="checkbox" value="${i}" name="year_search" class="btn-check" id="btn-check${i}" autocomplete="off">`;
+                                                        if (i >= 2022 && i >= 2021) {
+                                                            year_button_genelate += `<label class="btn btn-outline-primary px-1 disabled d-none" for="btn-check${i}">${i}年</label>`;
+                                                        } else if (i >= 2021) {
+                                                            year_button_genelate += `<label class="btn btn-outline-primary px-1" for="btn-check${i}">${i}年</label>`;
+                                                        } else {
+                                                            year_button_genelate += `<label class="btn btn-outline-primary mb-1 px-1" for="btn-check${i}">${i}年</label>`;
+                                                        };
+                                                    };
+                                                    year_button.innerHTML = year_button_genelate;
+                                                </script>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="cup_search">魔道杯</label>
+                                            <select class="form-select" id="cup_search">
+                                                <!-- JS出力 -->
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="data_sort">並べ替え</label>
+                                            <select class="form-select" id="data_sort">
+                                                <option value="">デフォルト</option>
+                                                <option value="1">順位が高い順</option>
+                                                <option value="2">順位が低い順</option>
+                                                <option value="3">ポイントが高い順</option>
+                                                <option value="4">ポイントが低い順</option>
+                                                <option value="5">時速が高い順</option>
+                                                <option value="6">時速が低い順</option>
+                                                <option value="7">下とのポイント差が大きい順</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary bg-gradient d-block m-auto w-25 search-button" type="button">
+                                    検索
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 p-2 text-center">
+                <div class="bg-film bg-gradient rounded py-2 mb-0">
+                    検索結果　<span class="fw-bold count_info"></span>件のデータが見つかりました。<br>
+                    <span class="fw-bold count_info_start"></span>件目～<span class="fw-bold count_info_end"></span>件目を表示中
+                </div>
+            </div>
+
+            <!-- ページネーション -->
+            <nav class="my-2" aria-label="pagination">
+                <ul class="pagination justify-content-center m-0">
+                    <li class="page-item pg-first" value="0">
+                        <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-bar-left"></i></button>
+                    </li>
+                    <li class="page-item pg-prev" value="1">
+                        <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-left"></i></button>
+                    </li>
+                    <li class="page-item active" aria-current="page" value="-1">
+                        <span class="page-link current-pg bg-wiz-blue bg-gradient border-wiz">92 / 92</span>
+                    </li>
+                    <li class="page-item pg-next" value="2">
+                        <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-right"></i></button>
+                    </li>
+                    <li class="page-item pg-last" value="3">
+                        <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-bar-right"></i></button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 全体デイリー -->
+            <div class="col-12 p-2 Daily_Area"></div>
+
+            <!-- 詳細モーダル 全体デイリー -->
+            <div class="col-12 Modal_Area_Daily"></div>
+
+
+            <div class="col-12 footer" id="footer"></div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../js/lodash.min.js"></script>
+    <script src="../js/Daily.js"></script>
+    <script src="../js/daily_search.js"></script>
+    <script src="../js/data-ready.js"></script>
+    <script src="../js/grade-calc.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../data/overall_data.js"></script>
+    <script src="../data/daily_data.js"></script>
+    <script src="../data/cup_data.js"></script>
+    <!-- JavaScript -->
+    <script>
+        $(function () {
+            $('#header').load('../component/header.html');
+            $('#sidemenu').load('../component/sidemenu.html');
+            $('#footer').load('../component/footer.html');
+        });
+    </script>
+    <script>
+        $(window).on('load', function () {
+            $('#loader-bg').fadeOut();
+        });
+    </script>
+    <!-- JavaScript -->
+
+</body>
+</html>

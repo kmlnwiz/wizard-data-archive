@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <title>魔道杯データ　SSダメージ計算</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="https://i-cf.quiz.colopl.jp/img/card/small/card_05302_0.png">
+    <!-- CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- CSS -->
+</head>
+<body class="noselectable pb-5">
+
+    <div id="loader-bg">
+        <img src="../img/materials/Loading.gif">
+    </div>
+
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+
+            <div class="col-12" id="header">
+            </div>
+            <nav class="topbar border-wiz border-top border-bottom border-top p-2 mb-2" aria-label="Breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                <ol class="breadcrumb mb-2">
+                    <li class="breadcrumb-item"><a href="../index.html">ホーム</a></li>
+                    <li class="breadcrumb-item active Event_this_page" aria-current="page">SSダメージ計算</li>
+                </ol>
+            </nav>
+
+
+            <div class="col-lg-6 p-2">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-3 fw-bold">設定</div>
+                <form name="form">
+
+                    <div class="mb-2">
+                        <div class="mb-2">
+                            <label for="attack_value" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">攻撃力</label><small class="text-muted ms-2 bg-film px-1 rounded py-2">攻撃力が0以下の場合は-1</small>
+                            <input type="number" class="form-control" id="attack_value" placeholder="必須" aria-label="必須" aria-describedby="attack_value_group" value="10000">
+                        </div>
+
+                        <label for="attack_attr1" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">攻撃属性</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text" id="attack_attr1_group">主</span>
+                            <select class="form-select" id="attack_attr1" aria-label="attack_attr1_group" name="type_calc">
+                                <option value="1">火</option>
+                                <option value="2">水</option>
+                                <option value="3" selected>雷</option>
+                                <option value="4">闇</option>
+                                <option value="5">光</option>
+                            </select>
+                            <span class="input-group-text" id="attack_attr2_group">複</span>
+                            <select class="form-select" id="attack_attr2" aria-label="attack_attr2_group" name="type_calc">
+                                <option value="0">複属性なし</option>
+                                <option value="1">火</option>
+                                <option value="2" selected>水</option>
+                                <option value="3">雷</option>
+                                <option value="4">闇</option>
+                                <option value="5">光</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-2">
+                        <label for="skill_value1" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">スキル最大効果値</label>
+                        <div class="input-group mb-2 bg-white rounded">
+                            <span class="input-group-text" id="skill_value1_group">主</span>
+                            <input type="number" class="form-control" id="skill_value1" placeholder="必須" aria-label="必須" aria-describedby="skill_value1_group" value="1100" min="0" step="50">
+                            <span class="input-group-text" id="skill_value2_group">複</span>
+                            <input type="number" class="form-control" id="skill_value2" placeholder="必須" aria-label="必須" aria-describedby="skill_value2_group" value="1100" min="0" step="50">
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="bind_skill">
+                                <label class="form-check-label rounded bg-film px-2 w-75" for="bind_skill">
+                                    主属性と複属性のスキル効果値を連動させる
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="enhance_value" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">攻撃強化・ブースト等合計効果値</label>
+                        <input type="number" class="form-control" id="enhance_value" placeholder="必須" aria-label="必須" aria-describedby="enhance_value_group" value="0" min="0" step="50">
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="accumulation_value" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">蓄積率・カウント</label><small class="text-muted ms-2 bg-film px-1 rounded py-2">パーセントまたは分数で指定</small>
+                        <input type="text" class="form-control" id="accumulation" placeholder="%または分数を入力" aria-label="必須" aria-describedby="accumulation_value" value="100.0" max="100.0" min="0.0" step="0.5">
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="skill_esp1">
+                            <label class="form-check-label rounded bg-film px-2 w-75" for="skill_esp1">
+                                蓄積解放大魔術・カウント系大魔術
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="skill_esp2">
+                            <label class="form-check-label rounded bg-film px-2 w-75" for="skill_esp2">
+                                特効大魔術・残滅大魔術
+                            </label>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-2">
+                        <div class="mb-2">
+                            <label for="chain" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">チェイン</label><small class="text-muted ms-2 bg-film px-1 rounded py-2">連鎖解放大魔術の場合は0</small>
+                            <input type="number" class="form-control" id="chain" placeholder="必須" aria-label="必須" aria-describedby="chain_group" value="0" min="0">
+                        </div>
+
+                        <label for="enemy_hp" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">ダメージ倍率</label>
+                        <div class="input-group mb-2">
+                            <input type="number" class="form-control" id="attack_magnification" placeholder="必須" aria-label="必須" aria-describedby="attack_magnification_group" value="1.0" min="1.0" step="0.1" data-bs-toggle="dropdown">
+                            <ul class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenu">
+                                <li value="1.0"><a class="dropdown-item">1.0倍</a></li>
+                                <li value="1.1"><a class="dropdown-item">1.1倍</a></li>
+                                <li value="1.2"><a class="dropdown-item">1.2倍</a></li>
+                                <li value="1.3"><a class="dropdown-item">1.3倍</a></li>
+                                <li value="1.4"><a class="dropdown-item">1.4倍</a></li>
+                            </ul>
+                            <span class="input-group-text" id="attack_magnifivation_group">倍</span>
+                        </div>
+                        <div class="mb-2">
+                            <label for="weakness_value" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">弱体化・軽減等</label><small class="text-muted ms-2 bg-film px-1 rounded py-2">軽減の場合はマイナスの効果値を入力</small>
+                            <div class="mb-2 input-group">
+                                <span class="input-group-text" id="weakness_attr_group">属性</span>
+                                <select class="form-select" id="weakness_attr" aria-label="weakness_attr_group" name="type_calc">
+                                    <option value="0" selected>なし</option>
+                                    <option value="1">火</option>
+                                    <option value="2">水</option>
+                                    <option value="3">雷</option>
+                                    <option value="4">闇</option>
+                                    <option value="5">光</option>
+                                    <option value="6">全</option>
+                                </select>
+                                <span class="input-group-text" id="weakness_value_group">効果値</span>
+                                <input type="number" class="form-control" id="weakness_value" placeholder="必須" aria-label="必須" aria-describedby="weakness_value_group" value="0" min="-100" step="50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-2">
+                        <label for="enemy_hp" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">敵の設定</label>
+                        <div class="input-group mb-2 bg-white rounded">
+                            <span class="input-group-text" id="enemy_hp_group">HP</span>
+                            <input type="number" class="form-control" id="enemy_hp" placeholder="必須" aria-label="必須" aria-describedby="enemy_hp_group" value="400000">
+                            <span class="input-group-text" id="enemy_attr_group">属性</span>
+                            <select class="form-select" id="enemy_attr" aria-label="Example select with button addon" name="enemy_attr_group">
+                                <option value="1">火</option>
+                                <option value="2" selected>水</option>
+                                <option value="3">雷</option>
+                                <option value="4">闇</option>
+                                <option value="5">光</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-3">
+                        <label for="enemy_hp" class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1">その他の設定</label>
+                        <div class="input-group mb-2 bg-white rounded">
+                            <span class="input-group-text" id="trial_count_group">試行回数</span>
+                            <input type="number" class="form-control" id="trial_count" placeholder="必須" aria-label="必須" aria-describedby="trial_count_group" value="1000" min="1">
+                            <span class="input-group-text" id="random_group">乱数</span>
+                            <select class="form-select" id="random" aria-label="Example select with button addon" name="random_group">
+                                <option value="0" selected>指定なし</option>
+                                <option value="0.90">0.90</option>
+                                <option value="0.95">0.95</option>
+                                <option value="1.00">1.00</option>
+                                <option value="1.05">1.05</option>
+                                <option value="1.10">1.10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </form>
+
+                <button class="btn btn-success bg-gradient calc-button">計算する</button>
+            </div>
+
+            <div class="col-lg-6 p-2">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-3 fw-bold">計算結果</div>
+                <div class="bg-film bg-gradient rounded py-2 mb-0 text-center border border-wiz">
+                    <h4 class="alert-heading" id="result-1">試行回数：0回</h4>
+                    <p class="" id="result-2">撃破回数 0/0回（撃破率：約0.00%）</p>
+                    <hr>
+                    <p class="my-0" id="result-3">最小値：　最大値：</p>
+                    <p class="my-0" id="result-4">平均値：　中央値：</p>
+                </div>
+
+                <table class="table table-hover table-wiz caption-top text-center my-3">
+                    <caption class="my-2 px-2 py-1 rounded bg-film">ダメージログ（最大で100件まで表示されます）</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width:10%">#</th>
+                            <th scope="col" style="width:30%">与ダメージ</th>
+                            <th scope="col" style="width:30%">主属性</th>
+                            <th scope="col" style="width:30%">複属性</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data_table">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-12 footer" id="footer">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../js/damage-calc.js"></script>
+    <script src="../js/lodash.min.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- JavaScript -->
+    <script>
+        $(function () {
+            $('#header').load('../component/header.html');
+            $('#sidemenu').load('../component/sidemenu.html');
+            $('#footer').load('../component/footer.html');
+        });
+    </script>
+    <script>
+        $(window).on('load', function () {
+            $('#loader-bg').fadeOut();
+        });
+    </script>
+    <!-- JavaScript -->
+
+</body>
+</html>

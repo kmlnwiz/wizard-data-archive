@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-wiz bg-gradient p-2">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white fw-bold w-100 m-0" href="../index.html">
+      魔道杯データ
+    </a>
+  </div>
+</nav>
+
+<!--背景画像ランダム-->
+<script>
+    $(function () {
+        let styleSheet = Array.prototype.slice.call(document.styleSheets)[2];
+        styleSheet.cssRules[2].style.cssText = styleSheet.cssRules[2].style.cssText.replace(/var\(\-\-random_(\d+)_(\d+)\)/g, function (a, b, c) {
+            let min = Number(b, 10);
+            let max = Number(c, 10);
+            //console.log(min,max)
+            let random = ` (${Math.floor(Math.random() * (max - min + 1)) + min})`;
+            return random;
+        });
+    });
+</script>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <title>魔道杯データ　魔道杯情報</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="https://i-cf.quiz.colopl.jp/img/card/small/card_05302_0.png">
+    <!-- CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- CSS -->
+</head>
+<body class="pb-5">
+    <div class="wrap noselectable">
+
+        <div id="loader-bg">
+            <img src="../img/materials/Loading.gif">
+        </div>
+
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+
+                <div class="col-12" id="header">
+                </div>
+                <nav class="topbar border-wiz border-top border-bottom border-top p-2 mb-2" aria-label="Breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                    <ol class="breadcrumb mb-1">
+                        <li class="breadcrumb-item"><a href="../index.html">ホーム</a></li>
+                        <li class="breadcrumb-item cup-list-link"><a href="cup-list.html">魔道杯一覧</a></li>
+                        <li class="breadcrumb-item active Event_this_page" aria-current="page"></li>
+                    </ol>
+                </nav>
+
+                <div class="col-12 p-2 bd-logoImg"></div>
+
+                <!-- ページネーション -->
+                <nav class="my-2" aria-label="pagination">
+                    <ul class="pagination justify-content-center m-0">
+                        <li class="page-item pg-last" value="3">
+                            <button class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-bar-left"></i></button>
+                        </li>
+                        <li class="page-item pg-next" value="2">
+                            <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-left"></i></button>
+                        </li>
+                        <li class="page-item active" aria-current="page" value="-1">
+                            <span class="page-link current-pg bg-wiz-blue bg-gradient border-wiz">2021年開催</span>
+                        </li>
+                        <li class="page-item pg-prev" value="1">
+                            <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-right"></i></button>
+                        </li>
+                        <li class="page-item pg-first" value="0">
+                            <button type="button" class="page-link bg-wiz bg-gradient border-wiz text-white px-3"><i class="bi bi-chevron-bar-right"></i></button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- 基本情報 -->
+                <div class="col-12 p-2 Info_Area"></div>
+
+
+                <!-- デッキ -->
+                <div class="col-12 p-2 Deck_Area"></div>
+
+                <!-- 詳細モーダル デッキ -->
+                <div class="col-12 Modal_Area_Deck"></div>
+
+
+                <!-- 総合ボード -->
+                <div class="col-12 p-2 Board_Area"></div>
+
+                <!-- 詳細モーダル 総合ボード -->
+                <div class="col-12 Modal_Area_Overall"></div>
+
+
+                <!-- 全体デイリー -->
+                <div class="col-12 p-2 Daily_Area"></div>
+
+                <!-- 詳細モーダル 全体デイリー -->
+                <div class="col-12 Modal_Area_Daily"></div>
+
+
+                <div class="col-12 footer" id="footer">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="modal-html2canvas-overall"></div>
+    <div id="modal-html2canvas-daily"></div>
+
+    <!-- JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="../js/lodash.min.js"></script>
+    <script src="../js/Board.js"></script>
+    <script src="../js/Daily.js"></script>
+    <script src="../js/Deck.js"></script>
+    <script src="../js/cup-data.js"></script>
+    <script src="../js/data-ready.js"></script>
+    <script src="../js/grade-calc.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../data/overall_data.js"></script>
+    <script src="../data/daily_data.js"></script>
+    <script src="../data/deck_data.js"></script>
+    <script src="../data/cup_data.js"></script>
+    <!-- JavaScript -->
+    <script>
+        $(function () {
+            $('#header').load('../component/header.html');
+            $('#sidemenu').load('../component/sidemenu.html');
+            $('#footer').load('../component/footer.html');
+        });
+    </script>
+    <script>
+        $(window).on('load', function () {
+            $('#loader-bg').fadeOut();
+        });
+    </script>
+    <script>
+        //画像生成
+        document.createImg_overall = () => {
+
+            $('.loadingImg-overall').removeClass('d-none');
+            $('.loadedImg-overall').addClass('d-none');
+            $('#overall-canvas').removeClass('d-none');
+            setTimeout(function () {
+                const content = document.querySelector('#overall-canvas');
+                const canvasElement = document.querySelector('#overall-canvas-output');
+
+                html2canvas(content, {
+                    backgroundColor: "rgba(30,0,0,0.9)",
+                    scrollX: 0,
+                    scrollY: 0,
+                    allowTaint: true,
+                    proxy: true,
+                    useCORS: true,
+                }).then(canvas => {
+                    canvasElement.src = canvas.toDataURL();
+                });
+                $('.loadingImg-overall').addClass('d-none');
+                $('.loadedImg-overall').removeClass('d-none');
+                $('#overall-canvas').addClass('d-none');
+            }, 100)
+        };
+    </script>
+    <script>
+        //画像生成
+        document.createImg_daily = () => {
+
+            $('.loadingImg-daily').removeClass('d-none');
+            $('.loadedImg-daily').addClass('d-none');
+            $('#daily-canvas').removeClass('d-none');
+            setTimeout(function () {
+                const content = document.querySelector('#daily-canvas');
+                const canvasElement = document.querySelector('#daily-canvas-output');
+
+                html2canvas(content, {
+                    backgroundColor: "rgba(30,0,0,0.9)",
+                    scrollX: 0,
+                    scrollY: 0,
+                    allowTaint: true,
+                    proxy: true,
+                    useCORS: true,
+                }).then(canvas => {
+                    canvasElement.src = canvas.toDataURL();
+                });
+                $('.loadingImg-daily').addClass('d-none');
+                $('.loadedImg-daily').removeClass('d-none');
+                $('#daily-canvas').addClass('d-none');
+            }, 100)
+        };
+    </script>
+    <!-- JavaScript -->
+
+</body>
+</html>

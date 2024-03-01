@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <title>魔道杯データ　魔道士ランキング</title>
+    <!-- 必要なメタタグ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" href="https://i-cf.quiz.colopl.jp/img/card/small/card_05302_0.png">
+    <!-- CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="../css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- CSS -->
+</head>
+<body class="noselectable pb-5">
+
+    <div id="loader-bg">
+        <img src="../img/materials/Loading.gif">
+    </div>
+
+    <div class="container-fluid p-0 overflow-hidden">
+        <div class="row g-0">
+
+            <div class="col-12" id="header">
+            </div>
+            <nav class="topbar border-wiz border-top border-bottom border-top p-2 mb-1" aria-label="Breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                <ol class="breadcrumb mb-1">
+                    <li class="breadcrumb-item"><a href="../index.html">ホーム</a></li>
+                    <li class="breadcrumb-item active Event_this_page" aria-current="page">魔道士ランキング</li>
+                </ol>
+            </nav>
+
+
+            <div class="col-12 p-2">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">目次</div>
+                <div class="border border-wiz rounded bg-film py-2 px-3">
+                    <span class="fw-bold">総合ボード</span>
+                    <ul class="my-0">
+                        <li class="my-1"><a href="#oc_ranking_head" class="text-dark contents-list">総合ボード回数</a></li>
+                        <!--<li class="my-1"><a href="#oc_1p_ranking_head" class="text-dark contents-list">総合ボード1P回数</a></li>-->
+                        <li class="my-1"><a href="#occ_ranking_head" class="text-dark contents-list">継続中の総合ボード連続回数</a></li>
+                        <li class="my-1"><a href="#occ_1p_ranking_head" class="text-dark contents-list">継続中の総合ボード1P連続回数</a></li>
+                        <li class="my-1"><a href="#bocc_ranking_head" class="text-dark contents-list">総合ボード最大連続回数</a></li>
+                        <li class="my-1"><a href="#bocc_1p_ranking_head" class="text-dark contents-list">総合ボード1P最大連続回数</a></li>
+                        <li class="my-1"><a href="#oar_ranking_head" class="text-dark contents-list">総合ボード平均順位</a></li>
+                        <li class="my-1"><a href="#osp_ranking_head" class="text-dark contents-list">総合ボード累計総合Pt</a></li>
+                        <li class="my-1"><a href="#oap_ranking_head" class="text-dark contents-list">総合ボード平均総合Pt</a></li>
+                        <li class="my-1"><a href="#orf_ranking_head" class="text-dark contents-list">獲得順位数（総合）</a></li>
+                        <li class="my-1"><a href="#og_ranking_head" class="text-dark contents-list">魔道杯グレード（総合）</a></li>
+                        <li class="my-1"><a href="#ogm_ranking_head" class="text-dark contents-list">魔道杯グレード最高（総合）</a></li>
+                    </ul>
+                    <hr>
+                    <span class="fw-bold">全体デイリー1P</span>
+                    <ul class="my-0">
+                        <li class="my-1"><a href="#dc_ranking_head" class="text-dark contents-list">全D1P入賞回数</a></li>
+                        <li class="my-1"><a href="#dc_top_ranking_head" class="text-dark contents-list">全D1位回数</a></li>
+                        <li class="my-1"><a href="#dar_ranking_head" class="text-dark contents-list">全D1P平均順位</a></li>
+                        <li class="my-1"><a href="#drf_ranking_head" class="text-dark contents-list">獲得順位数（デイリー）</a></li>
+                        <li class="my-1"><a href="#dg_ranking_head" class="text-dark contents-list">魔道杯グレード（デイリー）</a></li>
+                        <li class="my-1"><a href="#dgm_ranking_head" class="text-dark contents-list">魔道杯グレード最高（デイリー）</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 p-2">
+                <hr>
+            </div>
+
+
+            <div class="col-12 p-2">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">期間指定</div>
+
+                <div class="mb-2">
+                    <label class="form-label border border-wiz rounded bg-wiz text-white px-2 py-1 mb-1" for="cup_search_since">魔道杯</label>
+                    <div class="input-group">
+                        <select class="form-select" id="cup_search_since">
+                            <!-- JS出力 -->
+                        </select>
+                        <span class="input-group-text" id="cup_search">から</span>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <div class="input-group">
+                        <select class="form-select" id="cup_search_till">
+                            <!-- JS出力 -->
+                        </select>
+                        <span class="input-group-text" id="cup_search">まで</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-xl-4 p-2" id="oc_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード回数</div>
+                <div class="mb-1">
+                    <div class="d-flex justify-content-between flex-wrap row row-cols-5 g-0" id="rankpage-search">
+                        <input type="checkbox" value="1" name="rankpage_search" class="btn-check" id="btn-check_page1" autocomplete="off"><label class="btn btn-wiz px-1" for="btn-check_page1">1P</label>
+                        <input type="checkbox" value="2" name="rankpage_search" class="btn-check" id="btn-check_page2" autocomplete="off"><label class="btn btn-wiz px-1" for="btn-check_page2">2P</label>
+                        <input type="checkbox" value="3" name="rankpage_search" class="btn-check" id="btn-check_page3" autocomplete="off"><label class="btn btn-wiz px-1" for="btn-check_page3">3P</label>
+                        <input type="checkbox" value="4" name="rankpage_search" class="btn-check" id="btn-check_page4" autocomplete="off"><label class="btn btn-wiz px-1" for="btn-check_page4">4P</label>
+                        <input type="checkbox" value="5" name="rankpage_search" class="btn-check" id="btn-check_page5" autocomplete="off"><label class="btn btn-wiz px-1" for="btn-check_page5">5P</label>
+                    </div>
+                </div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="oc_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oc_ranking_collapse" aria-expanded="false" aria-controls="collapse1">
+                    11位～50位
+                </button>
+                <div class="collapse" id="oc_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oc_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oc_ranking_collapse2" aria-expanded="false" aria-controls="collapse1-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="oc_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oc_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--<div class="col-md-6 col-xl-4 p-2" id="oc_1p_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード1P回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="oc_1p_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oc_1p_ranking_collapse" aria-expanded="false" aria-controls="collapse2">
+                    11位～50位
+                </button>
+                <div class="collapse" id="oc_1p_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oc_1p_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>-->
+
+            <div class="col-md-6 col-xl-4 p-2" id="occ_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">継続中の総合ボード連続回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="occ_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#occ_ranking_collapse" aria-expanded="false" aria-controls="collapse3">
+                    11位～50位
+                </button>
+                <div class="collapse" id="occ_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="occ_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="occ_1p_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">継続中の総合ボード1P連続回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="occ_1p_ranking">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="bocc_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード最大連続回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数（期間）</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bocc_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#bocc_ranking_collapse2" aria-expanded="false" aria-controls="collapse4">
+                    11位～50位
+                </button>
+                <div class="collapse" id="bocc_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数（期間）</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bocc_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#bocc_ranking_collapse" aria-expanded="false" aria-controls="collapse4-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="bocc_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数（期間）</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bocc_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-xl-4 p-2" id="bocc_1p_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード1P最大連続回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数（期間）</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bocc_1p_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#bocc_1p_ranking_collapse2" aria-expanded="false" aria-controls="collapse4-2">
+                    11位～50位
+                </button>
+                <div class="collapse" id="bocc_1p_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数（期間）</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bocc_1p_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-xl-4 p-2" id="oar_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード平均順位</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">平均順位</th>
+                        </tr>
+                    </thead>
+                    <tbody id="oar_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oar_ranking_collapse" aria-expanded="false" aria-controls="collapse5">
+                    11位～50位
+                </button>
+                <div class="collapse" id="oar_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">平均順位</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oar_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oar_ranking_collapse2" aria-expanded="false" aria-controls="collapse5-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="oar_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oar_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="osp_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード累計総合Pt</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                        </tr>
+                    </thead>
+                    <tbody id="osp_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#osp_ranking_collapse" aria-expanded="false" aria-controls="collapse6">
+                    11位～50位
+                </button>
+                <div class="collapse" id="osp_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                            </tr>
+                        </thead>
+                        <tbody id="osp_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#osp_ranking_collapse2" aria-expanded="false" aria-controls="collapse6-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="osp_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                            </tr>
+                        </thead>
+                        <tbody id="osp_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="oap_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">総合ボード平均総合Pt</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                        </tr>
+                    </thead>
+                    <tbody id="oap_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oap_ranking_collapse" aria-expanded="false" aria-controls="collapse6">
+                    11位～50位
+                </button>
+                <div class="collapse" id="oap_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oap_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#oap_ranking_collapse2" aria-expanded="false" aria-controls="collapse6-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="oap_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">ポイント</th>
+                            </tr>
+                        </thead>
+                        <tbody id="oap_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="orf_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">獲得順位数（総合）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orf_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#orf_ranking_collapse" aria-expanded="false" aria-controls="collapse8">
+                    11位～50位
+                </button>
+                <div class="collapse" id="orf_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orf_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#orf_ranking_collapse2" aria-expanded="false" aria-controls="collapse8-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="orf_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orf_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="og_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">魔道杯グレード（総合）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                        </tr>
+                    </thead>
+                    <tbody id="og_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#og_ranking_collapse" aria-expanded="false" aria-controls="collapse7">
+                    11位～50位
+                </button>
+                <div class="collapse" id="og_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="og_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#og_ranking_collapse2" aria-expanded="false" aria-controls="collapse7-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="og_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="og_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="ogm_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">魔道杯グレード最高（総合）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ogm_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#ogm_ranking_collapse" aria-expanded="false" aria-controls="collapse7">
+                    11位～50位
+                </button>
+                <div class="collapse" id="ogm_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ogm_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#ogm_ranking_collapse2" aria-expanded="false" aria-controls="collapse7-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="ogm_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ogm_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12 p-2">
+                <hr>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="dc_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">全D1P入賞回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dc_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dc_ranking_collapse" aria-expanded="false" aria-controls="collapse9">
+                    11位～50位
+                </button>
+                <div class="collapse" id="dc_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dc_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dc_ranking_collapse2" aria-expanded="false" aria-controls="collapse9-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="dc_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dc_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="dc_top_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">全D1位回数</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">回数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dc_top_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dc_top_ranking_collapse" aria-expanded="false" aria-controls="collapse10">
+                    11位～50位
+                </button>
+                <div class="collapse" id="dc_top_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dc_top_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="dar_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">全D1P平均順位</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">平均順位</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dar_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dar_ranking_collapse" aria-expanded="false" aria-controls="collapse8">
+                    11位～50位
+                </button>
+                <div class="collapse" id="dar_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">平均順位</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dar_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dar_ranking_collapse2" aria-expanded="false" aria-controls="collapse8-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="dar_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">平均順位</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dar_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="drf_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">獲得順位数（デイリー）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="drf_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#drf_ranking_collapse" aria-expanded="false" aria-controls="collapse8">
+                    11位～50位
+                </button>
+                <div class="collapse" id="drf_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="drf_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#drf_ranking_collapse2" aria-expanded="false" aria-controls="collapse8-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="drf_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">獲得数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="drf_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="dg_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">魔道杯グレード（デイリー）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dg_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dg_ranking_collapse" aria-expanded="false" aria-controls="collapse11">
+                    11位～50位
+                </button>
+                <div class="collapse" id="dg_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dg_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dg_ranking_collapse2" aria-expanded="false" aria-controls="collapse11-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="dg_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dg_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4 p-2" id="dgm_ranking_head">
+                <div class="heading-bar text-white p-1 border border-wiz rounded text-center h4 mb-2 fw-bold">魔道杯グレード最高（デイリー）</div>
+                <table class="table table-sm table-hover table-wiz mb-1 fw-bold">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center" style="width:15%;">順位</th>
+                            <th scope="col" style="width:45%;">ユーザー名</th>
+                            <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dgm_ranking">
+                    </tbody>
+                </table>
+                <button class="btn btn-primary bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dgm_ranking_collapse" aria-expanded="false" aria-controls="collapse11">
+                    11位～50位
+                </button>
+                <div class="collapse" id="dgm_ranking_collapse">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dgm_ranking_table">
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-success bg-gradient w-100 mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#dgm_ranking_collapse2" aria-expanded="false" aria-controls="collapse11-1">
+                    51位～100位
+                </button>
+                <div class="collapse" id="dgm_ranking_collapse2">
+                    <table class="table table-sm table-hover table-wiz mb-1">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center" style="width:15%;">順位</th>
+                                <th scope="col" style="width:45%;">ユーザー名</th>
+                                <th scope="col" class="text-center" style="width:40%;">グレード</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dgm_ranking_table2">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12 footer" id="footer">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../js/lodash.min.js"></script>
+    <script src="../js/ranking.js"></script>
+    <script src="../js/data-ready.js"></script>
+    <script src="../js/grade-calc.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script src="../data/overall_data.js"></script>
+    <script src="../data/daily_data.js"></script>
+    <script src="../data/cup_data.js"></script>
+    <!-- JavaScript -->
+    <script>
+        $(function () {
+            $('#header').load('../component/header.html');
+            $('#sidemenu').load('../component/sidemenu.html');
+            $('#footer').load('../component/footer.html');
+        });
+    </script>
+    <script>
+        $(window).on('load', function () {
+            $('#loader-bg').fadeOut();
+        });
+    </script>
+    <!-- JavaScript -->
+
+</body>
+</html>
