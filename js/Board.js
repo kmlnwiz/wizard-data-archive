@@ -25,13 +25,13 @@ overall_data_output = function (array) {
                 if (array[i].isGrandslam && array[i].rank === 1) {
                     output_html += `<div class="" style="height: 62px; width: 62px;">`;
                     output_html += `<div class="grandslam p-0 m-0  board-data-img bd-data-img-rank${array[i].rank}" style="height: 62px; width: 62px;">`;
-                    output_html += `<img class="p-0 m-0" src="https://i-cf.quiz.colopl.jp/img/card/small/${array[i].img}_0.png" style="height: 62px; width: 62px;" crossorigin="anonymous" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
+                    output_html += `<img class="p-0 m-0" src="https://i-cf.quiz.colopl.jp/img/card/small/${array[i].img}_0.png" style="height: 62px; width: 62px;" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
                     output_html += `</div>`;
                     output_html += `</div>`;
                     output_html += `<div class="bd-data-rank${array[i].rank}"></div>`;
                 } else {
                     output_html += `<div class="" style="height: 62px; width: 62px;">`;
-                    output_html += `<img class="p-0 m-0 board-data-img bd-data-img-rank${array[i].rank}" src="https://i-cf.quiz.colopl.jp/img/card/small/${array[i].img}_0.png" style="height: 62px; width: 62px;" crossorigin="anonymous" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
+                    output_html += `<img class="p-0 m-0 board-data-img bd-data-img-rank${array[i].rank}" src="https://i-cf.quiz.colopl.jp/img/card/small/${array[i].img}_0.png" style="height: 62px; width: 62px;" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
                     output_html += `</div>`;
                     output_html += `<div class="bd-data-rank${array[i].rank}"></div>`;
                 }
@@ -92,7 +92,7 @@ overall_data_output = function (array) {
 
 
                     output_html_modal += `<h5 class="modal-title" id="modalcontent${modal.eventId}-${modal.rank}">`;
-                    output_html_modal += `<img class="p-0 m-0 board-data-img rounded" src="https://i-cf.quiz.colopl.jp/img/card/small/${modal.img}_0.png" style="height: 42px; width: 42px;" crossorigin="anonymous" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
+                    output_html_modal += `<img class="p-0 m-0 board-data-img rounded" src="https://i-cf.quiz.colopl.jp/img/card/small/${modal.img}_0.png" style="height: 42px; width: 42px;" onselectstart="return false;" onmousedown="return false;" loading="lazy"/>`;
                     output_html_modal += `<span class="ms-2 fw-bold">${modal.userName}`;
                     //output_html_modal += `<span class="small">${modal.userName !== modal.alias ? ` / ${modal.alias}` : ""}</span>`;
                     output_html_modal += `</span>`;
