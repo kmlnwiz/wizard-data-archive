@@ -217,11 +217,13 @@
         });
         //画像生成
         function createImg_daily(num) {
-            if (first_d) {
+
+            if (first_o) {
                 $('.loadingImg-daily').removeClass('d-none');
                 $('.loadedImg-daily').addClass('d-none');
                 $("[id^='daily-canvas-']").removeClass('d-none');
                 $('#img-share-daily').addClass('disabled');
+
                 setTimeout(function () {
                     let a = [],
                         b = [];
@@ -244,7 +246,7 @@
                         }).then(canvas => {
                             b[i].src = canvas.toDataURL();
                             //download.href = canvas.toDataURL("image/png");
-                            //download.download = "result-overall.png";
+                            //download.download = "result-daily.png";
                         });
                     };
 
@@ -252,7 +254,7 @@
                     $('.loadedImg-daily').removeClass('d-none');
                     for (let i = 0; i < num; i++) {
                     $(`#daily-canvas-${i}`).addClass('d-none');
-                };
+                    };
                     $('#img-share-daily').removeClass('disabled');
                 }, 1000)
                 //first_d = false;
