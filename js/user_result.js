@@ -729,6 +729,7 @@ $(function () {
         };
         createImg_overall(Math.ceil(od_user[0].BoardCount['total'] / unit[0]));
     });
+
     $('#canvas_daily_rankorder').on('click', function () {
         daily_canvas = [];
         if ($('#canvas_daily_rankorder').prop('checked')) {
@@ -739,6 +740,6 @@ $(function () {
         for (let j = 0; j < Math.ceil(dailyDataCanvas.length / unit[1]); j++) {
             $(`#table_ready_daily_${j}`).html(daily_canvas[j]);
         };
-        createImg_daily(Math.ceil(dd_user[0].BoardCount['total'] / unit[1]));
+        createImg_daily(Math.ceil(dd_user[0].BoardCount / unit[1]));
     });
 });
