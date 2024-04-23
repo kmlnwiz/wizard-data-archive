@@ -260,11 +260,11 @@ function info() {
     output_html += `<div class="row g-0">`;
 
     output_html += `<div class="col-12 col-md-6 p-2">`;
-    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24?'d-none':''}" data-bs-toggle="modal" data-bs-target="#modal-overall-table" onClick="createImg_overall()">総合ボード　画像化</button>`;
+    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24 ? 'd-none' : ''}" data-bs-toggle="modal" data-bs-target="#modal-overall-table" onClick="createImg_overall()">総合ボード　画像化</button>`;
     output_html += `</div>`;
 
     output_html += `<div class="col-12 col-md-6 p-2">`;
-    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24?'d-none':''}" data-bs-toggle="modal" data-bs-target="#modal-daily-table" onClick="createImg_daily()">全体デイリー　画像化</button>`;
+    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24 ? 'd-none' : ''}" data-bs-toggle="modal" data-bs-target="#modal-daily-table" onClick="createImg_daily()">全体デイリー　画像化</button>`;
     output_html += `</div>`;
 
     output_html += `</div>`;
@@ -300,7 +300,7 @@ data_filter = function () {
         deck_data.forEach((element) => {
             element.data.forEach((define) => {
                 const check = 'alias' in define; {
-                    if (check) {} else {
+                    if (check) { } else {
                         define.alias = define.userName;
                     };
                 };
@@ -400,7 +400,7 @@ data_filter = function () {
                 output_html_modal_html2canvas += `<div id="overall-canvas" class="my-1 noselectable">`;
                 output_html_modal_html2canvas += `<div class="w-100 py-2 bg-wiz">`;
                 //output_html_modal_html2canvas += `<img class="quiz-img-d d-block mx-auto" src="../img/logoImg/${cup_data[cup_data.length - eventId].data.eventImg}.png" style="height:3.5em;">`;
-                output_html_modal_html2canvas += `<span class="fw-bold">${cup_data[cup_data.length - eventId].data.eventName}</span>`;
+                output_html_modal_html2canvas += `<img class="mx-auto bd-data-logoImg" src="../img/logoImg/${cup_data[cup_data.length - eventId].data.eventImg}.png" onselectstart="return false;" onmousedown="return false;" />`;
                 output_html_modal_html2canvas += `<br>`;
                 output_html_modal_html2canvas += `総合TOP50`;
                 output_html_modal_html2canvas += `</div>`;
@@ -458,7 +458,7 @@ data_filter = function () {
 
                     //桁合わせ
                     point_padding = '_'.repeat(6 - String(Math.round(daily[i].avgSpeed)).length) + ','.repeat(Math.floor((6 - String(Math.round(daily[i].avgSpeed)).length) / 3));
-                    daily_canvas_html += `<td scope="col" class="d-none d-lg-table-cell text-center fw-bold" style="width:20%;"><span class="opacity-0">${point_padding}</span>${toThousandDecimal(Math.round(daily[i].avgSpeed*100)/100)} Pt/h</td>
+                    daily_canvas_html += `<td scope="col" class="d-none d-lg-table-cell text-center fw-bold" style="width:20%;"><span class="opacity-0">${point_padding}</span>${toThousandDecimal(Math.round(daily[i].avgSpeed * 100) / 100)} Pt/h</td>
                     </tr>`;
                 };
 
@@ -493,7 +493,7 @@ data_filter = function () {
                 output_html_modal_html2canvas += `<div id="daily-canvas" class="my-1 noselectable">`;
                 output_html_modal_html2canvas += `<div class="w-100 py-2 bg-wiz">`;
                 //output_html_modal_html2canvas += `<img class="quiz-img-d d-block mx-auto" src="../img/logoImg/${cup_data[cup_data.length - eventId].data.eventImg}.png" style="height:3.5em;">`;
-                output_html_modal_html2canvas += `<span class="fw-bold">${cup_data[cup_data.length - eventId].data.eventName}</span>`;
+                output_html_modal_html2canvas += `<img class="mx-auto bd-data-logoImg" src="../img/logoImg/${cup_data[cup_data.length - eventId].data.eventImg}.png" onselectstart="return false;" onmousedown="return false;" />`;
                 output_html_modal_html2canvas += `<br>`;
                 output_html_modal_html2canvas += `全体デイリーTOP10`;
                 output_html_modal_html2canvas += `</div>`;
