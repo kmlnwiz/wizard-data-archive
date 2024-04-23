@@ -724,10 +724,10 @@ $(function () {
         } else {
             table_ready_overall(overallDataCanvas);
         };
-        for (let j = 0; j < Math.ceil(overallDataCanvas.length / unit[1]); j++) {
+        for (let j = 0; j < Math.ceil(overallDataCanvas.length / unit[0]); j++) {
             $(`#table_ready_overall_${j}`).html(overall_canvas[j]);
         };
-        createImg_overall(Math.ceil(od_user[0].BoardCount['total'] / unit[1]));
+        createImg_overall(Math.ceil(od_user[0].BoardCount['total'] / unit[0]));
     });
     $('#canvas_daily_rankorder').on('click', function () {
         daily_canvas = [];
