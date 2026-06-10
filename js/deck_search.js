@@ -109,7 +109,10 @@ data_filter = function () {
         });
 
         for (const i in deck_data) {
-            deck_data[i].eventYear = cup_data[i].data.eventYear;
+            const cup = cup_data.find(function (value) {
+                return value.eventId === deck_data[i].eventId;
+            });
+            deck_data[i].eventYear = cup ? cup.data.eventYear : undefined;
         };
 
         /* 状況に応じて変更 */

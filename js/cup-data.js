@@ -259,12 +259,16 @@ function info() {
 
     output_html += `<div class="row g-0">`;
 
+    const hasDailyData = daily_data.some(function (value) {
+        return value.eventId == eventId;
+    });
+
     output_html += `<div class="col-12 col-md-6 p-2">`;
     output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24 ? 'd-none' : ''}" data-bs-toggle="modal" data-bs-target="#modal-overall-table" onClick="createImg_overall()">総合ボード　画像化</button>`;
     output_html += `</div>`;
 
     output_html += `<div class="col-12 col-md-6 p-2">`;
-    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24 ? 'd-none' : ''}" data-bs-toggle="modal" data-bs-target="#modal-daily-table" onClick="createImg_daily()">全体デイリー　画像化</button>`;
+    output_html += `<button class="btn btn-primary bg-gradient w-100 ${eventId < 24 || !hasDailyData ? 'd-none' : ''}" data-bs-toggle="modal" data-bs-target="#modal-daily-table" onClick="createImg_daily()">全体デイリー　画像化</button>`;
     output_html += `</div>`;
 
     output_html += `</div>`;

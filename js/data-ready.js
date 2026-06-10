@@ -57,14 +57,16 @@ function overall_data_arrange(data) {
             //console.log(dd);
 
             const dailyTop = [];
-            //1日目
-            dd[0].data[0].alias ? dailyTop.push(dd[0].data[0].alias) : dailyTop.push(dd[0].data[0].userName);
-            //2日目
-            dd[0].data[10].alias ? dailyTop.push(dd[0].data[10].alias) : dailyTop.push(dd[0].data[10].userName);
-            //3日目
-            dd[0].data[20].alias ? dailyTop.push(dd[0].data[20].alias) : dailyTop.push(dd[0].data[20].userName);
-            //4日目
-            dd[0].data[30].alias ? dailyTop.push(dd[0].data[30].alias) : dailyTop.push(dd[0].data[30].userName);
+            if (dd.length > 0 && dd[0].data.length >= 31) {
+                //1日目
+                dd[0].data[0].alias ? dailyTop.push(dd[0].data[0].alias) : dailyTop.push(dd[0].data[0].userName);
+                //2日目
+                dd[0].data[10].alias ? dailyTop.push(dd[0].data[10].alias) : dailyTop.push(dd[0].data[10].userName);
+                //3日目
+                dd[0].data[20].alias ? dailyTop.push(dd[0].data[20].alias) : dailyTop.push(dd[0].data[20].userName);
+                //4日目
+                dd[0].data[30].alias ? dailyTop.push(dd[0].data[30].alias) : dailyTop.push(dd[0].data[30].userName);
+            };
             //console.log(dailyTop);
 
             if (_.filter(dailyTop, x => x === element.alias).length === 4) {
@@ -87,9 +89,14 @@ function overall_data_arrange(data) {
 
     //上下ポイント差
     data = _.each(data, element => {
+        const currentOverall = _.find(overall_data, x => {
+            return x.eventId === element.eventId;
+        });
+        const higherEntry = currentOverall ? currentOverall.data[element.rank - 2] : undefined;
+        const lowerEntry = currentOverall ? currentOverall.data[element.rank] : undefined;
         const marginPoint = {
-            higher: element.rank > 1 ? overall_data[overall_data[0].eventId - element.eventId].data[element.rank - 2].point - element.point : 0,
-            lower: element.rank < 50 ? element.point - overall_data[overall_data[0].eventId - element.eventId].data[element.rank].point : 0,
+            higher: element.rank > 1 && higherEntry ? higherEntry.point - element.point : 0,
+            lower: element.rank < 50 && lowerEntry ? element.point - lowerEntry.point : 0,
         };
         marginPoint.higher < 0 || marginPoint.higher === element.point ? marginPoint.higher = 0 : '';
         marginPoint.lower < 0 || marginPoint.lower === element.point ? marginPoint.lower = 0 : '';
@@ -443,14 +450,16 @@ function daily_data_arrange(data) {
             //console.log(dd);
 
             const dailyTop = [];
-            //1日目
-            dd[0].data[0].alias ? dailyTop.push(dd[0].data[0].alias) : dailyTop.push(dd[0].data[0].userName);
-            //2日目
-            dd[0].data[10].alias ? dailyTop.push(dd[0].data[10].alias) : dailyTop.push(dd[0].data[10].userName);
-            //3日目
-            dd[0].data[20].alias ? dailyTop.push(dd[0].data[20].alias) : dailyTop.push(dd[0].data[20].userName);
-            //4日目
-            dd[0].data[30].alias ? dailyTop.push(dd[0].data[30].alias) : dailyTop.push(dd[0].data[30].userName);
+            if (dd.length > 0 && dd[0].data.length >= 31) {
+                //1日目
+                dd[0].data[0].alias ? dailyTop.push(dd[0].data[0].alias) : dailyTop.push(dd[0].data[0].userName);
+                //2日目
+                dd[0].data[10].alias ? dailyTop.push(dd[0].data[10].alias) : dailyTop.push(dd[0].data[10].userName);
+                //3日目
+                dd[0].data[20].alias ? dailyTop.push(dd[0].data[20].alias) : dailyTop.push(dd[0].data[20].userName);
+                //4日目
+                dd[0].data[30].alias ? dailyTop.push(dd[0].data[30].alias) : dailyTop.push(dd[0].data[30].userName);
+            };
             //console.log(dailyTop);
 
             if (_.filter(dailyTop, x => x === element.alias).length === 4) {

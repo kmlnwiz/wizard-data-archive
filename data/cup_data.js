@@ -1,4 +1,330 @@
 cup_data = [{
+    eventId: 131,
+    data: {
+        eventName: "おかえり！ 大魔道杯 in 八百万 喧嘩神輿とうなめんと β1",
+        eventDate: ["6/5 16:00", "6/8 15:59"],
+        eventImg: "2606",
+        eventYear: 2026,
+        dayLength: [20, 20, 20],
+        eventQuiz: ["四択"],
+        border: [20770515, 13660595, 11980401],
+        maxSpeed: 445500,
+        getPoint: 13500
+    }
+}, {
+    eventId: 130,
+    data: {
+        eventName: "こどもの日 大まどーはい！ 2026",
+        eventDate: ["5/22 16:00", "5/25 15:59"],
+        eventImg: "2605",
+        eventYear: 2026,
+    }
+}, {
+    eventId: 129,
+    data: {
+        eventName: "13周年 13種族の大魔道杯",
+        eventDate: ["3/20 16:00", "3/23 15:59"],
+        eventImg: "2603",
+        eventYear: 2026,
+    }
+}, {
+    eventId: 128,
+    data: {
+        eventName: "大魔道杯 in FairyChord ReReChord",
+        eventDate: ["1/23 16:00", "1/26 15:59"],
+        eventImg: "2601",
+        eventYear: 2026,
+    }
+}, {
+    eventId: 127,
+    data: {
+        eventName: "聖なる空のパジャマパーティー大魔道杯",
+        eventDate: ["11/21 16:00", "11/24 15:59"],
+        eventImg: "2511",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 126,
+    data: {
+        eventName: "範馬刃牙 大魔道杯編",
+        eventDate: ["9/19 16:00", "9/22 15:59"],
+        eventImg: "2509",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 125,
+    data: {
+        eventName: "大魔道杯 in 黄昏メアレス Rethread",
+        eventDate: ["7/25 16:00", "7/28 15:59"],
+        eventImg: "2507",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 124,
+    data: {
+        eventName: "こどもの日 大まどーはい！ 2025",
+        eventDate: ["5/23 16:00", "5/26 15:59"],
+        eventImg: "2505",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 123,
+    data: {
+        eventName: "12周年大魔道杯 with フェスバプラス",
+        eventDate: ["3/21 16:00", "3/24 15:59"],
+        eventImg: "2503",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 122,
+    data: {
+        eventName: "ととのえ！極楽サウナ大魔道杯",
+        eventDate: ["1/24 16:00", "1/27 15:59"],
+        eventImg: "2501",
+        eventYear: 2025,
+    }
+}, {
+    eventId: 121,
+    data: {
+        eventName: "勤労感謝の日 大魔道杯",
+        eventDate: ["11/22 16:00", "11/25 15:59"],
+        eventImg: "2411",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 120,
+    data: {
+        eventName: "大魔道杯 in アルティメットバニーガールズ！",
+        eventDate: ["9/20 16:00", "9/23 15:59"],
+        eventImg: "2409",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 119,
+    data: {
+        eventName: "オキナーズ大魔道杯 in 納涼災",
+        eventDate: ["7/26 16:00", "7/29 15:59"],
+        eventImg: "2407",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 118,
+    data: {
+        eventName: "こどもの日大まどーはい 2024",
+        eventDate: ["5/24 16:00", "5/27 15:59"],
+        eventImg: "2405",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 117,
+    data: {
+        eventName: "11周年 光と闇の大魔道杯",
+        eventDate: ["3/22 16:00", "3/25 15:59"],
+        eventImg: "2403",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 116,
+    data: {
+        eventName: "ゆったりくつろぎ温泉大魔道杯",
+        eventDate: ["1/26 16:00", "1/29 15:59"],
+        eventImg: "2401",
+        eventYear: 2024,
+    }
+}, {
+    eventId: 115,
+    data: {
+        eventName: "大魔道杯 in STELLA☆DASH！",
+        eventDate: ["11/24 16:00", "11/27 15:59"],
+        eventImg: "2311",
+        eventYear: 2023,
+    }
+}, {
+    eventId: 114,
+    data: {
+        eventName: "殿堂入り祝賀大魔道杯",
+        eventDate: ["9/22 16:00", "9/25 15:59"],
+        eventImg: "2309",
+        eventYear: 2023,
+    }
+}, {
+    eventId: 113,
+    data: {
+        eventName: "大魔道杯 in 納涼祭",
+        eventDate: ["7/21 16:00", "7/24 15:59"],
+        eventImg: "2307",
+        eventYear: 2023,
+    }
+}, {
+    eventId: 112,
+    data: {
+        eventName: "こどもの日大魔道杯 in 魔轟三鉄傑",
+        eventDate: ["5/26 16:00", "5/29 15:59"],
+        eventImg: "2305",
+        eventYear: 2023,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [12348500, 6107501, 4815000],
+        maxSpeed: 0,
+        getPoint: 12500
+    }
+}, {
+    eventId: 111,
+    data: {
+        eventName: "10周年大魔道杯 ～すべての始まり～",
+        eventDate: ["3/24 16:00", "3/27 15:59"],
+        eventImg: "2303",
+        eventYear: 2023,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [15061000, 9622500, 8065502],
+        maxSpeed: 0,
+        getPoint: 13500
+    }
+}, {
+    eventId: 110,
+    data: {
+        eventName: "大魔道杯 in 天女資格試験",
+        eventDate: ["1/23 16:00", "1/20 15:59"],
+        eventImg: "2301",
+        eventYear: 2023,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [13778501, 8135000, 6567000],
+        maxSpeed: 0,
+        getPoint: 13500
+    }
+}, {
+    eventId: 109,
+    data: {
+        eventName: "大魔道杯 in Diablo Emblem",
+        eventDate: ["11/25 16:00", "11/28 15:59"],
+        eventImg: "2211",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [15517000, 8716500, 0],
+        maxSpeed: 290000,
+        getPoint: 14500
+    }
+}, {
+    eventId: 108,
+    data: {
+        eventName: "大魔道杯 in 黒ウィズゴールデンアワード2022",
+        eventDate: ["9/23 16:00", "9/26 15:59"],
+        eventImg: "2209",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [17623000, 11760003, 0],
+        maxSpeed: 299000,
+        getPoint: 0
+    }
+}, {
+    eventId: 107,
+    data: {
+        eventName: "殿堂入り記念大魔道杯 with 嘘猫&ロア",
+        eventDate: ["8/26 16:00", "8/29 15:59"],
+        eventImg: "2208",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [15516000, 9543000, 0],
+        maxSpeed: 308000,
+        getPoint: 11000
+    }
+}, {
+    eventId: 106,
+    data: {
+        eventName: "大魔道杯 in 海の家おーるど・わん",
+        eventDate: ["7/22 16:00", "7/25 15:59"],
+        eventImg: "2207",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [16684200, 11085000, 0],
+        maxSpeed: 290000,
+        getPoint: 14500
+    }
+}, {
+    eventId: 105,
+    data: {
+        eventName: "大魔道杯 in 浴衣まつり",
+        eventDate: ["6/24 16:00", "6/27 15:59"],
+        eventImg: "2206",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [13830000, 8549000, 0],
+        maxSpeed: 264000,
+        getPoint: 12000
+    }
+}, {
+    eventId: 104,
+    data: {
+        eventName: "こどもの日大まどーはい！2022",
+        eventDate: ["5/27 16:00", "5/30 15:59"],
+        eventImg: "2205",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [13065000, 7968002, 0],
+        maxSpeed: 252000,
+        getPoint: 12000
+    }
+}, {
+    eventId: 103,
+    data: {
+        eventName: "イースター大魔道杯 in 天上岬",
+        eventDate: ["4/22 16:00", "4/25 15:59"],
+        eventImg: "2204",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [13848200, 8931000, 0],
+        maxSpeed: 288000,
+        getPoint: 12000
+    }
+}, {
+    eventId: 102,
+    data: {
+        eventName: "9周年応援大魔道杯",
+        eventDate: ["3/25 16:00", "3/28 15:59"],
+        eventImg: "2203",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [14653000, 10202000, 0],
+        maxSpeed: 286000,
+        getPoint: 11000
+    }
+}, {
+    eventId: 101,
+    data: {
+        eventName: "大魔道杯 with 闇のアイドル",
+        eventDate: ["2/25 16:00", "2/28 15:59"],
+        eventImg: "2202",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [14426000, 9267000, 0],
+        maxSpeed: 281000,
+        getPoint: 11000
+    }
+}, {
+    eventId: 100,
+    data: {
+        eventName: "大魔道杯 with FairyChord",
+        eventDate: ["1/21 16:00", "1/24 15:59"],
+        eventImg: "2201",
+        eventYear: 2022,
+        dayLength: [8, 24, 24, 16],
+        eventQuiz: ["四択"],
+        border: [15513001, 10925009, 8114009],
+        maxSpeed: 286000,
+        getPoint: 11000
+    }
+}, {
     eventId: 99,
     data: {
         eventName: "メリクリ大魔道杯 with 超絶パリピ天女",
