@@ -6,28 +6,28 @@ deck_data = [{
             result: [1],
             card: ['8F5pjN_card_19002', 'card_12604', 'card_11530', 'S8GFBg_card_19446', '5AuRJP_card_19334'],
             frame: ['11_2_1', '11_1_3', '11_1_0', '11_1_4', '11_1_0'],
-            cardName: ["", "", "", "", ""],
+            cardName: ["境界騎士団 セドリック&アネモネ", "響く竜の鳴き声 リクシス&キャナル", "花嫁 in 魔道棺桶 アリエッタ・トワ", "新年航路の女神様 シール・サンテ", "黒き花嫁 アーシュ・シンデレラ"],
             is_EX: [true, false, false, false, false],
         }, {
             userName: "Kamurana",
             result: [2],
             card: ['8F5pjN_card_19002', 'card_10639', 'VVx3Fy_card_16045', 'wsPL7d_card_19141', 'GRScd9_card_16241'],
             frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_0', '11_1_3'],
-            cardName: ["", "", "", "", ""],
+            cardName: ["境界騎士団 セドリック&アネモネ", "水蛇纏う白浪竜胆 ツバキ・リンドウ", "幸せの味 テーラ・プラエ", "", "月光のリンクス リーリャ・ヤロスキ"],
             is_EX: [true, true, false, false, false],
         }, {
             userName: "まうゆり",
             result: [3],
             card: ['8F5pjN_card_19002', 'card_12653', 'VVx3Fy_card_16045', 'card_12604', 'yEg62c_card_19397'],
             frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_3', '11_0_1'],
-            cardName: ["", "", "", "", ""],
+            cardName: ["境界騎士団 セドリック&アネモネ", "絆の体現 テーラ&ユースティティア", "幸せの味 テーラ・プラエ", "響く竜の鳴き声 リクシス&キャナル", "滅却炎舞 フェネクス"],
             is_EX: [true, false, false, false, false],
         }, {
             userName: "",
             result: [],
             card: ['8F5pjN_card_19002', 'card_12653', 'VVx3Fy_card_16045', 'card_12604', '5AuRJP_card_19334'],
             frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_3', '11_1_0'],
-            cardName: ["", "", "", "", ""],
+            cardName: ["境界騎士団 セドリック&アネモネ", "絆の体現 テーラ&ユースティティア", "幸せの味 テーラ・プラエ", "響く竜の鳴き声 リクシス&キャナル", "黒き花嫁 アーシュ・シンデレラ"],
             is_EX: [true, false, false, false, false],
         }]
 }, {

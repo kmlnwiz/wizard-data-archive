@@ -225,12 +225,12 @@ overall_data = [{
         point: 14008500
     }, {
         rank: 5,
-        userName: "B.Nergilus",
-        point: 12897504
-    }, {
-        rank: 6,
         userName: "ラム@キュウマ",
         point: 12878000
+    }, {
+        rank: 6,
+        userName: "B.Nergilus",
+        point: 12901504
     }, {
         rank: 7,
         userName: "FA",
@@ -1877,12 +1877,12 @@ overall_data = [{
         point: 13029000
     }, {
         rank: 10,
-        userName: "ブリーズ",
-        point: 13000000
+        userName: "rinrin",
+        point: 13065000
     }, {
         rank: 11,
-        userName: "rinrin",
-        point: 12987000
+        userName: "ブリーズ",
+        point: 13000000
     }, {
         rank: 12,
         userName: "7miya",
