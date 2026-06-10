@@ -45,7 +45,7 @@ overall_data = [{
         point: 20770515
     }, {
         rank: 11,
-        userName: "チーカま",
+        userName: "チーかま",
         point: 20367797
     }, {
         rank: 12,
@@ -57,7 +57,7 @@ overall_data = [{
         point: 20214095
     }, {
         rank: 14,
-        userName: "№⁴⁴",
+        userName: "№44",
         point: 20139934
     }, {
         rank: 15,
@@ -212,7 +212,7 @@ overall_data = [{
         point: 18850000
     }, {
         rank: 2,
-        userName: "№⁴⁴",
+        userName: "№44",
         point: 14512500,
         img: 'card_10875'
     }, {
@@ -305,7 +305,7 @@ overall_data = [{
         point: 8483000
     }, {
         rank: 25,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 8179004
     }, {
         rank: 26,
@@ -469,11 +469,11 @@ overall_data = [{
         point: 14451500
     }, {
         rank: 15,
-        userName: "チーカま",
+        userName: "チーかま",
         point: 13939393
     }, {
         rank: 16,
-        userName: "№⁴⁴",
+        userName: "№44",
         point: 13746500
     }, {
         rank: 17,
@@ -497,7 +497,7 @@ overall_data = [{
         point: 12963000
     }, {
         rank: 22,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 12903501
     }, {
         rank: 23,
@@ -637,7 +637,7 @@ overall_data = [{
         point: 15271000
     }, {
         rank: 6,
-        userName: "№⁴⁴",
+        userName: "№44",
         point: 14845000
     }, {
         rank: 7,
@@ -725,7 +725,7 @@ overall_data = [{
         point: 10466000
     }, {
         rank: 28,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 10308503
     }, {
         rank: 29,
@@ -901,7 +901,7 @@ overall_data = [{
         point: 12018001
     }, {
         rank: 21,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 11928002
     }, {
         rank: 22,
@@ -1105,7 +1105,7 @@ overall_data = [{
         point: 15951000
     }, {
         rank: 21,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 15925001
     }, {
         rank: 22,
@@ -1256,7 +1256,7 @@ overall_data = [{
         point: 15780000
     }, {
         rank: 8,
-        userName: "チーカま",
+        userName: "チーかま",
         point: 15621889
     }, {
         rank: 9,
@@ -1288,7 +1288,7 @@ overall_data = [{
         point: 14918040
     }, {
         rank: 16,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 14177001
     }, {
         rank: 17,
@@ -1488,7 +1488,7 @@ overall_data = [{
         point: 15558000
     }, {
         rank: 15,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 15379004
     }, {
         rank: 16,
@@ -1556,11 +1556,11 @@ overall_data = [{
         point: 12602500
     }, {
         rank: 32,
-        userName: "にゃんげー",
+        userName: "にゃんけー",
         point: 12345678
     }, {
         rank: 33,
-        userName: "ララソ",
+        userName: "ラプソ",
         point: 12345678
     }, {
         rank: 34,
@@ -1724,7 +1724,7 @@ overall_data = [{
         point: 11720000
     }, {
         rank: 23,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 11643002
     }, {
         rank: 24,
@@ -1901,7 +1901,7 @@ overall_data = [{
         point: 11741200
     }, {
         rank: 16,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 11649001
     }, {
         rank: 17,
@@ -1929,7 +1929,7 @@ overall_data = [{
         point: 11233000
     }, {
         rank: 23,
-        userName: "チーカま",
+        userName: "チーかま",
         point: 11111111
     }, {
         rank: 24,
@@ -2164,7 +2164,7 @@ overall_data = [{
         point: 11557000
     }, {
         rank: 31,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 11443000
     }, {
         rank: 32,
@@ -2240,7 +2240,7 @@ overall_data = [{
         point: 8961603
     }, {
         rank: 50,
-        userName: "ララソ",
+        userName: "ラプソ",
         point: 8931000
     }]
 }, {
@@ -2343,7 +2343,7 @@ overall_data = [{
         point: 12702000
     }, {
         rank: 25,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 12530000
     }, {
         rank: 26,
@@ -2470,7 +2470,7 @@ overall_data = [{
         point: 15317000
     }, {
         rank: 6,
-        userName: "にゃんげー",
+        userName: "にゃんけー",
         point: 14994000
     }, {
         rank: 7,
@@ -2574,7 +2574,7 @@ overall_data = [{
         point: 10908000
     }, {
         rank: 32,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 10875001
     }, {
         rank: 33,
@@ -2817,7 +2817,7 @@ overall_data = [{
         point: 11757500
     }, {
         rank: 42,
-        userName: "灯音-akaue-",
+        userName: "灯音-aκaиe-",
         point: 11719089
     }, {
         rank: 43,
@@ -2849,7 +2849,7 @@ overall_data = [{
         point: 11029000
     }, {
         rank: 50,
-        userName: "にゃんげー",
+        userName: "にゃんけー",
         point: 10903009
     }]
 }, {
