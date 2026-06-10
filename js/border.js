@@ -5,10 +5,14 @@ $(function () {
     $('#border_sort').on('change', search);
     search();
 
+    function hasBorderData(value) {
+        return value.data && Array.isArray(value.data.border) && value.data.border.length >= 3;
+    }
+
     function search() {
 
         search_result = Object.assign([], cup_data.filter(function (value) {
-            return value.eventId >= 24;
+            return value.eventId >= 24 && hasBorderData(value);
         }));
 
         //並べ替え
