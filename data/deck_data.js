@@ -26,7 +26,7 @@ deck_data = [{
             userName: "",
             result: [],
             card: ['8F5pjN_card_19002', 'card_12653', 'VVx3Fy_card_16045', 'card_12604', '5AuRJP_card_19334'],
-            frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_3', '11_0_1'],
+            frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_3', '11_1_0'],
             cardName: ["", "", "", "", ""],
             is_EX: [true, false, false, false, false],
         }]
