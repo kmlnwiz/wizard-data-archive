@@ -961,7 +961,7 @@ overall_data = [{
         point: 9934500
     }, {
         rank: 36,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 9840000
     }, {
         rank: 37,
@@ -1193,7 +1193,7 @@ overall_data = [{
         point: 13174000
     }, {
         rank: 43,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 13140000
     }, {
         rank: 44,
@@ -1340,7 +1340,7 @@ overall_data = [{
         point: 12134000
     }, {
         rank: 29,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 12000000
     }, {
         rank: 30,
@@ -1536,7 +1536,7 @@ overall_data = [{
         point: 13743500
     }, {
         rank: 27,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 13610000
     }, {
         rank: 28,
@@ -1740,7 +1740,7 @@ overall_data = [{
         point: 11103921
     }, {
         rank: 27,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 11010000
     }, {
         rank: 28,
@@ -1957,7 +1957,7 @@ overall_data = [{
         point: 10000000
     }, {
         rank: 30,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 9970000
     }, {
         rank: 31,
@@ -2212,7 +2212,7 @@ overall_data = [{
         point: 10000000
     }, {
         rank: 43,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 9990000
     }, {
         rank: 44,
@@ -2431,7 +2431,7 @@ overall_data = [{
         point: 10586004
     }, {
         rank: 47,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 10385000
     }, {
         rank: 48,
@@ -2582,7 +2582,7 @@ overall_data = [{
         point: 10771200
     }, {
         rank: 34,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 10638000
     }, {
         rank: 35,
@@ -2801,7 +2801,7 @@ overall_data = [{
         point: 11958000
     }, {
         rank: 38,
-        userName: "鶴 龍",
+        userName: "鶴+龍",
         point: 11879000
     }, {
         rank: 39,
