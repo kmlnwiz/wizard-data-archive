@@ -11,10 +11,10 @@ deck_data = [{
         }, {
             userName: "Kamurana",
             result: [2],
-            card: ['8F5pjN_card_19002', 'card_12653', 'VVx3Fy_card_16045', 'wsPL7d_card_19141', 'GRScd9_card_16241'],
+            card: ['8F5pjN_card_19002', 'card_10639', 'VVx3Fy_card_16045', 'wsPL7d_card_19141', 'GRScd9_card_16241'],
             frame: ['11_2_1', '11_1_4', '11_1_0', '11_1_0', '11_1_3'],
             cardName: ["", "", "", "", ""],
-            is_EX: [true, false, false, false, false],
+            is_EX: [true, true, false, false, false],
         }, {
             userName: "まうゆり",
             result: [3],
