@@ -109,7 +109,7 @@ overall_data = [{
         point: 17189671
     }, {
         rank: 27,
-        userName: "峰影三なゆpon",
+        userName: "峰影=なゆpon",
         point: 17145600
     }, {
         rank: 28,
