@@ -33,7 +33,7 @@ overall_data = [{
         point: 22019314
     }, {
         rank: 8,
-        userName: "しみゅう",
+        userName: "しみゆう",
         point: 21685168
     }, {
         rank: 9,
