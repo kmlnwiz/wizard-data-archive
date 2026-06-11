@@ -1465,7 +1465,7 @@ overall_data = [{
     }, {
         rank: 9,
         userName: "神楽",
-        point: 16661500
+        point: 16735000
     }, {
         rank: 10,
         userName: "rinrin",
@@ -2459,7 +2459,8 @@ overall_data = [{
     }, {
         rank: 3,
         userName: "める",
-        point: 16158800
+        point: 16158800,
+        img: 'card_06794'
     }, {
         rank: 4,
         userName: "こに その3(仮)",
@@ -2681,12 +2682,12 @@ overall_data = [{
         point: 15749000
     }, {
         rank: 8,
-        userName: "たくと",
-        point: 15673955
-    }, {
-        rank: 9,
         userName: "野武士",
         point: 15668000
+    }, {
+        rank: 9,
+        userName: "たくと",
+        point: 15706955
     }, {
         rank: 10,
         userName: "はちみつ",
