@@ -2683,7 +2683,7 @@ overall_data = [{
     }, {
         rank: 8,
         userName: "野武士",
-        point: 15668000
+        point: 15712000
     }, {
         rank: 9,
         userName: "たくと",
