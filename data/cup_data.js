@@ -1,4 +1,17 @@
 cup_data = [{
+    eventId: 132,
+    data: {
+        eventName: "おかえり！ 大魔道杯 in エステレラ β2",
+        eventDate: ["7/10 16:00", "7/13 15:59"],
+        eventImg: "2607_1",
+        eventYear: 2026,
+        dayLength: [8, 20, 20, 12],
+        eventQuiz: ["四択"],
+        border: [23629310, 13664760, 12144000],
+        maxSpeed: 502200,
+        getPoint: 16200
+    }
+}, {
     eventId: 131,
     data: {
         eventName: "おかえり！ 大魔道杯 in 八百万 喧嘩神輿とうなめんと β1",
